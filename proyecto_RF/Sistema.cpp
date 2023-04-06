@@ -8,7 +8,8 @@ using std::endl;
 
 
 void Sistema::recibirHabitat(int id, Habitat* pHabitatTemp) {
-    if(pHabitatTemp->existeHabitat(pHabitatTemp->getTipoH())== false){
+    string habitatTemp = pHabitatTemp->getTipoH();
+    if( habitatTemp != "desertico" && habitatTemp != "selvatico" && habitatTemp != "polar" && habitatTemp != "acuatico"){
         throw std::logic_error("Recuerda que solo puedes ingresar los siguientes tipos de habitat (en minusculas): desertico, selvatico, polar y acuatico\n") ;
     }
     this->mapaHabitats.insert(std::make_pair(id, pHabitatTemp));

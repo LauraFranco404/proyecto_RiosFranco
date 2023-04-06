@@ -22,7 +22,6 @@ public:
     Habitat(string tipoHabitat);
     string getTipoH();
     void recibirAnimal(int id, Animal* pAnimalTemp, string habitat);
-    bool existeHabitat(string habitat);
 };
 
 

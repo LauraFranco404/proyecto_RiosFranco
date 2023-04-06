@@ -22,7 +22,9 @@ void primeraOpcion(Sistema* sistema, int idTemp){
             cout << "Se presento un error: " << ex.what() << endl;
         }
     }
-    cin >> tipoHabitatTemp;
+    else{
+        cout << "Lo siento. Este habitat ya existe :c" << endl;
+    }
 }
 
 void segundaOpcion(Sistema* sistema, int idTemp){
@@ -42,6 +44,10 @@ void segundaOpcion(Sistema* sistema, int idTemp){
     cin >> nombreTemp;
     cout << "Ingrese la edad: ";
     cin >> edadTemp;
+    while (edadTemp < 0 || edadTemp > 100){
+        cout << "Por favor verifique que la edad que esta ingresando se encuentra entre los 0 y 100 anios" << endl;
+        cin >> edadTemp;
+    }
     cout << "Ingrese la especie: ";
     cin >> especieTemp;
     cout << "Ingrese el tipo de alimentacion: ";
@@ -54,6 +60,14 @@ void segundaOpcion(Sistema* sistema, int idTemp){
     cin >> estadoSaludTemp;
     cout << "Ingrese el habitat al que pertenece (desertico, selvatico polar o acuatico): ";
     cin >> habitatTemp;
+    while(habitatTemp != "desertico" && habitatTemp != "selvatico" && habitatTemp != "polar" && habitatTemp != "acuatico"){
+        cout << "Por favor verifique que el habitat que esta ingresando corresponde a los habitats existentes en el zoologico (desertico, selvatico polar o acuatico)" << endl;
+        cin >> habitatTemp;
+    }
+    if(sistema->estaHabitat(habitatTemp) == true){
+        Animal *pAnimalTemp = new Animal(nombreTemp, edadTemp, especieTemp, tipoATemp, horasSTemp, tiempoJuegoTemp, estadoSaludTemp, habitatTemp);
+
+    }
 
 
 }
@@ -61,17 +75,24 @@ void segundaOpcion(Sistema* sistema, int idTemp){
 
 void mostrarMenu(Sistema* sistema){
     int opcion;
+    int idTemp = 1;
     do{
         cout << "\n****Bienvenido al zoologico RF****\n";
         cout << "1. Agregar un habitat." << endl;
+        cin >> opcion;
+        switch(opcion){
+            case 1:
+                primeraOpcion(sistema, idTemp);
+                idTemp++;
+        }
     }while (opcion != 0);
 }
 
 
 
 int main() {
-    //Sistema* pSistema = new Sistema();
-    //mostrarMenu(pSistema);
+    Sistema* pSistema = new Sistema();
+    mostrarMenu(pSistema);
     return 0;
 }
 

@@ -21,9 +21,3 @@ void Habitat::recibirAnimal(int id, Animal *pAnimalTemp, string habitat) {
     this->mapaAnimales.insert(std::make_pair(id, pAnimalTemp));
 }
 
-bool Habitat::existeHabitat(string habitat) {
-    if(habitat != "desertico" || habitat != "selvatico" || habitat != "polar" || habitat != "acuatico"){
-        return true;
-    }
-    return false;
-}
