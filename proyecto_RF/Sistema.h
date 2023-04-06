@@ -19,6 +19,8 @@ public:
 
     void recibirHabitat(int id, Habitat* pHabitatTemp);
     bool estaHabitat(string tipoHabitat);
+    Habitat* accederAHabitat(string tipoHabitat);
+    void mostrarInfoHabitats();
 };
 
 

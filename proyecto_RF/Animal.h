@@ -24,8 +24,13 @@ private:
 public:
     Animal(string nombre, int edad, string especie, string tipoA, int horasS, int tiempoJuego, bool estadoSalud, string habitat);
     string getHabitat();
-
-    //bool existeHabitat(string habitat);
+    string getNombre();
+    int getEdad();
+    string getEspecie();
+    string getTipoAlimentacion();
+    int getHorasSuenio();
+    int getTiempoJuego();
+    string getEstadoSalud();
 };
 
 

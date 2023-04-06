@@ -21,3 +21,19 @@ void Habitat::recibirAnimal(int id, Animal *pAnimalTemp, string habitat) {
     this->mapaAnimales.insert(std::make_pair(id, pAnimalTemp));
 }
 
+void Habitat::mostrarMapaAnimales() {
+    unordered_map<int, Animal*>::iterator itMap;
+    for (itMap = this->mapaAnimales.begin(); itMap != this->mapaAnimales.end(); ++itMap){
+        Animal* pAnimalTemp = itMap->second;
+        cout << "\n***Animal***" << endl;
+        cout << "Nombre: " << pAnimalTemp->getNombre() << endl;
+        cout << "Edad: " << pAnimalTemp->getEdad() << endl;
+        cout << "Especie: " << pAnimalTemp->getEspecie() << endl;
+        cout << "Tipo de alimentación: " << pAnimalTemp->getTipoAlimentacion() << endl;
+        cout << "Horas de sueño: " << pAnimalTemp->getHorasSuenio() << endl;
+        cout << "Horas de juego: " << pAnimalTemp->getTiempoJuego() << endl;
+        cout << "Estado de salud: " << pAnimalTemp->getEstadoSalud() << endl;
+
+    }
+}
+

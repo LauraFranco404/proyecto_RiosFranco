@@ -18,3 +18,33 @@ string Animal::getHabitat() {
     return this->habitat;
 }
 
+string Animal::getNombre(){
+    return this->nombre;
+}
+int Animal::getEdad(){
+    return this->edad;
+}
+
+string Animal::getEspecie(){
+    return this->especie;
+}
+
+string Animal::getTipoAlimentacion(){
+    return this->tipoA;
+}
+
+int Animal::getHorasSuenio(){
+    return this->horasS;
+}
+int Animal::getTiempoJuego(){
+    return this->tiempoJuego;
+}
+
+string Animal::getEstadoSalud() {
+    if(estadoSalud == true){
+        return "sano";
+    }
+    else{
+        return "enfermo";
+    }
+}

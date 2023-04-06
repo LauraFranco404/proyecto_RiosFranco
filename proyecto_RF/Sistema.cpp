@@ -26,6 +26,28 @@ bool Sistema::estaHabitat(string tipoHabitat) {
     return false;
 }
 
+Habitat* Sistema::accederAHabitat(string tipoHabitat) {
+    unordered_map<int, Habitat*>::iterator itMap;
+    for (itMap = this->mapaHabitats.begin(); itMap != this->mapaHabitats.end(); ++itMap) {
+        Habitat *pHabitatTemp = itMap->second;
+        if (pHabitatTemp->getTipoH() == tipoHabitat) {
+            cout << "Accedio al habitat "<< tipoHabitat << endl;
+            return pHabitatTemp;
+        }
+    }
+}
+
+
+void Sistema::mostrarInfoHabitats() {
+    unordered_map<int, Habitat*>::iterator itMap;
+    for (itMap = this->mapaHabitats.begin(); itMap != this->mapaHabitats.end(); ++itMap) {
+        Habitat *pHabitatTemp = itMap->second;
+        cout << "\n ***Habitat " << pHabitatTemp->getTipoH() << "***" << endl;
+        pHabitatTemp->mostrarMapaAnimales();
+    }
+}
+
+
 Sistema::~Sistema() {
     cout << "\n Gracias por preferirnos!" << endl;
 }

@@ -13,6 +13,7 @@
 using std::cout;
 using std::string;
 using std::unordered_map;
+using std::endl;
 
 class Habitat {
 private:
@@ -22,6 +23,7 @@ public:
     Habitat(string tipoHabitat);
     string getTipoH();
     void recibirAnimal(int id, Animal* pAnimalTemp, string habitat);
+    void mostrarMapaAnimales();
 };
 
 
