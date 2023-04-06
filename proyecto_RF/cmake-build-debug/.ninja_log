@@ -1,0 +1,20 @@
+# ninja log v5
+1	534	7022310844052193	CMakeFiles/proyecto_RF.dir/main.cpp.obj	726b3c7a3192c3bd
+538	785	7022310846472066	proyecto_RF.exe	8a070cdbb35df6c1
+51	714	7023148558272762	CMakeFiles/proyecto_RF.dir/Sistema.cpp.obj	3102d7d11de2f89e
+5	717	7023148558272762	CMakeFiles/proyecto_RF.dir/Habitat.cpp.obj	a0fdd2b72b4e4e5b
+57	719	7023148558302685	CMakeFiles/proyecto_RF.dir/Animal.cpp.obj	544e2c76e167cab1
+719	1107	7023148562233703	proyecto_RF.exe	55f32237926b335f
+15	899	7023175441229797	CMakeFiles/proyecto_RF.dir/Habitat.cpp.obj	a0fdd2b72b4e4e5b
+25	912	7023175441359450	CMakeFiles/proyecto_RF.dir/Sistema.cpp.obj	3102d7d11de2f89e
+4	569	7023175711406665	CMakeFiles/proyecto_RF.dir/main.cpp.obj	726b3c7a3192c3bd
+571	771	7023175713351450	proyecto_RF.exe	55f32237926b335f
+4	594	7023176853745505	CMakeFiles/proyecto_RF.dir/main.cpp.obj	726b3c7a3192c3bd
+595	775	7023176855470898	proyecto_RF.exe	55f32237926b335f
+11	1549	7023500466376239	CMakeFiles/proyecto_RF.dir/main.cpp.obj	726b3c7a3192c3bd
+39	1571	7023500466565724	CMakeFiles/proyecto_RF.dir/Animal.cpp.obj	544e2c76e167cab1
+32	1590	7023500466894851	CMakeFiles/proyecto_RF.dir/Sistema.cpp.obj	3102d7d11de2f89e
+25	1591	7023500466914800	CMakeFiles/proyecto_RF.dir/Habitat.cpp.obj	a0fdd2b72b4e4e5b
+1592	1994	7023500471073678	proyecto_RF.exe	55f32237926b335f
+25	14097	7024506474175280	CMakeFiles/proyecto_RF.dir/Habitat.cpp.obj	a0fdd2b72b4e4e5b
+14099	16613	7024506500381319	proyecto_RF.exe	55f32237926b335f

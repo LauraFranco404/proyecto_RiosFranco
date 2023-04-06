@@ -1,0 +1,3 @@
+C:/Users/laura/OneDrive/Escritorio/GIT/proyecto_RiosFranco/proyecto_RF/cmake-build-debug/CMakeFiles/proyecto_RF.dir
+C:/Users/laura/OneDrive/Escritorio/GIT/proyecto_RiosFranco/proyecto_RF/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/laura/OneDrive/Escritorio/GIT/proyecto_RiosFranco/proyecto_RF/cmake-build-debug/CMakeFiles/rebuild_cache.dir
