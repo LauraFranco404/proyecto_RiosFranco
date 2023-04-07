@@ -23,6 +23,7 @@ public:
     Alimento(string nombreAlimento, int categoria);
     string getNombreAlimento();
     string getCategoriaAlimento();
+    int getNumCategoriaAlimento();
 };
 
 

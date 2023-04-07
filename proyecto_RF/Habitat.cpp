@@ -33,7 +33,19 @@ void Habitat::mostrarMapaAnimales() {
         cout << "Horas de suenio: " << pAnimalTemp->getHorasSuenio() << endl;
         cout << "Horas de juego: " << pAnimalTemp->getTiempoJuego() << endl;
         cout << "Estado de salud: " << pAnimalTemp->getEstadoSalud() << endl;
-
+        cout << "Juego en el dia: " << pAnimalTemp->verSiHaJugado() << endl;
     }
 }
+
+Animal* Habitat::accederAAnimal(string nombre){
+    unordered_map<int, Animal*>::iterator itMap;
+    for (itMap = this->mapaAnimales.begin(); itMap != this->mapaAnimales.end(); ++itMap){
+        Animal* pAnimalTemp = itMap->second;
+        if(pAnimalTemp->getNombre() == nombre){
+            cout << "Accedio a " << nombre << endl;
+            return pAnimalTemp;
+        }
+    }
+}
+
 

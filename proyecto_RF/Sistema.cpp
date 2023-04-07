@@ -41,7 +41,28 @@ Habitat* Sistema::accederAHabitat(string tipoHabitat) {
     }
 }
 
+Alimento* Sistema::accederAAlimento(string alimento){
+    unordered_map<int, Alimento*>::iterator itMap;
+    for (itMap = this->mapaAlimentos.begin(); itMap != this->mapaAlimentos.end(); ++itMap) {
+        Alimento *pAlimentoTemp = itMap->second;
+        if(pAlimentoTemp->getNombreAlimento() == alimento){
+            cout << "Accedio al alimento " << alimento << endl;
+            return pAlimentoTemp;
+        }
+    }
+}
 
+void Sistema::liberarAlimento(string alimento) {
+    unordered_map<int, Alimento *>::iterator itMap;
+    for (itMap = this->mapaAlimentos.begin(); itMap != this->mapaAlimentos.end(); ++itMap) {
+        Alimento *pAlimentoTemp = itMap->second;
+        if (pAlimentoTemp->getNombreAlimento() == alimento) {
+            mapaAlimentos.erase(itMap->first);
+            cout << "Ha usado el alimento " << alimento;
+            break;
+        }
+    }
+}
 
 void Sistema::mostrarInfoHabitats() {
     unordered_map<int, Habitat*>::iterator itMap;

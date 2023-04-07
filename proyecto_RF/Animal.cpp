@@ -3,7 +3,7 @@
 //
 
 #include "Animal.h"
-Animal::Animal(string nombre, int edad, string especie, string tipoA, int horasS, int tiempoJuego, bool estadoSalud, string habitat){
+Animal::Animal(string nombre, int edad, string especie, string tipoA, int horasS, int tiempoJuego, bool estadoSalud, string habitat, bool haJugado){
     this->nombre = nombre;
     this->edad = edad;
     this->especie = especie;
@@ -12,6 +12,7 @@ Animal::Animal(string nombre, int edad, string especie, string tipoA, int horasS
     this->tiempoJuego = tiempoJuego;
     this->estadoSalud = estadoSalud;
     this->habitat = habitat;
+    this->haJugado = haJugado;
 }
 
 string Animal::getHabitat() {
@@ -40,11 +41,28 @@ int Animal::getTiempoJuego(){
     return this->tiempoJuego;
 }
 
-string Animal::getEstadoSalud() {
+string Animal::getEstadoSalud(){
     if(estadoSalud == true){
         return "sano";
     }
     else{
         return "enfermo";
     }
+}
+
+string Animal::verSiHaJugado(){
+    if(haJugado == true){
+        return "Ha jugado";
+    }
+    else{
+        return "No ha jugado";
+    }
+}
+
+bool Animal::getHaJugado(){
+    return this->haJugado;
+}
+
+void Animal::setHaJugado(bool haJugado){
+    this->haJugado = haJugado;
 }

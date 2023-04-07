@@ -77,7 +77,7 @@ void segundaOpcion(Sistema* sistema, int idTempA){
         cin >> habitatTemp;
     }
     if(sistema->estaHabitat(habitatTemp) == true){
-        Animal *pAnimalTemp = new Animal(nombreTemp, edadTemp, especieTemp, tipoATemp, horasSTemp, tiempoJuegoTemp, estadoSaludTemp, habitatTemp);
+        Animal *pAnimalTemp = new Animal(nombreTemp, edadTemp, especieTemp, tipoATemp, horasSTemp, tiempoJuegoTemp, estadoSaludTemp, habitatTemp,false);
         Habitat *pHabitatTemp = sistema->accederAHabitat(habitatTemp);
         pHabitatTemp->recibirAnimal(idTempA, pAnimalTemp, habitatTemp);
     }
@@ -103,6 +103,103 @@ void cuartaOpcion(Sistema* sistema, int idTempAl){
     cout << "El alimento se ha agregado exitosamente" << endl;
 }
 
+void sextaOpcion(Sistema* sistema) {
+    string nombreH;
+    string nombreA;
+    string tipoA;
+    int catAl;
+    string nombreAl;
+    int categoria;
+
+    cout << "Bienvenido, usuario." << endl;
+    cout << "A continuacion alimentara a un animal: " << endl;
+    sistema->mostrarInfoHabitats();
+    cout << "Digite el habitat del animal que desea alimentar:";
+    cin >> nombreH;
+    Habitat *pHabitatTemp = sistema->accederAHabitat(nombreH);
+    cout << "Ahora digite el nombre del animal al que desea alimentar:";
+    cin >> nombreA;
+    Animal *pAnimalTemp = pHabitatTemp->accederAAnimal(nombreA);
+    tipoA = pAnimalTemp->getTipoAlimentacion();
+    cout << "*Alimentos disponibles*";
+    sistema->mostrarInfoAlimentos();
+    cout << "Ingrese el nombre del alimento que desea dar al animal:";
+    cin >> nombreAl;
+    Alimento *pAlimentoTemp = sistema->accederAAlimento(nombreAl);
+    catAl = pAlimentoTemp->getNumCategoriaAlimento();
+    if (catAl == 0 && tipoA == "carnivora") {
+        cout << "Dieta carnivora" << endl;
+        sistema->liberarAlimento(pAlimentoTemp->getNombreAlimento());
+    }
+    else if (catAl == 1 && tipoA == "hervibora") {
+        cout << "Dieta hervibora" << endl;
+        sistema->liberarAlimento(pAlimentoTemp->getNombreAlimento());
+    }
+    else if(catAl == 2 && tipoA == "omnivora"){
+        cout << "Dieta omnivora" << endl;
+        sistema->liberarAlimento(pAlimentoTemp->getNombreAlimento());
+    }
+    else{
+        cout << "Lo lamento, no puedes alimentar a este animal porque no le corresponde esa dieta." << endl;
+    }
+}
+
+void septimaOpcion(Sistema* sistema){
+    string nombreH;
+    string nombreA;
+
+    cout << "Bienvenido, usuario." << endl;
+    cout << "A continuacion jugara con un animal: " << endl;
+    sistema->mostrarInfoHabitats();
+    cout << "Digite el habitat del animal con el que desea jugar:";
+    cin >> nombreH;
+    Habitat *pHabitatTemp = sistema->accederAHabitat(nombreH);
+    cout << "Ahora digite el nombre del animal con el que desea jugar:";
+    cin >> nombreA;
+    Animal *pAnimalTemp = pHabitatTemp->accederAAnimal(nombreA);
+    cout << pAnimalTemp->getNombre() << " "  << pAnimalTemp->verSiHaJugado() << endl;
+    pAnimalTemp->setHaJugado(true);
+}
+
+
+void octavaOpcion(Sistema* sistema){
+    string nombreH;
+    string nombreA;
+    int horasS;
+    int horasDadas;
+    cout << "Bienvenido, usuario." << endl;
+    cout << "A continuacion llevara a dormir a un animal: " << endl;
+    sistema->mostrarInfoHabitats();
+    cout << "Digite el habitat del animal que llevar a dormir:";
+    cin >> nombreH;
+    Habitat *pHabitatTemp = sistema->accederAHabitat(nombreH);
+    cout << "Ahora digite el nombre del animal al que llevara a dormir:";
+    cin >> nombreA;
+    Animal *pAnimalTemp = pHabitatTemp->accederAAnimal(nombreA);
+    horasS = pAnimalTemp->getHorasSuenio();
+    cout << "El animal debe dormir " << horasS << " horas" << endl;
+    cout << "Ingrese el numero de horas que desea darle al animal para dormir:";
+    cin >> horasDadas;
+    while(horasS != horasDadas) {
+        if(horasDadas < horasS){
+            cout << "Ou, ten cuidado. No es suficiente tiempo para dormir" << endl;
+        }
+        else{
+            cout << "Ou, ten cuidado. Es demasiado tiempo para dormir" << endl;
+        }
+        cout << "Recuerda que el animal debe dormir " << horasS << " horas" << endl;
+        cout << "Ingrese el numero de horas que desea darle al animal para dormir:";
+        cin >> horasDadas;
+
+    }
+    if (horasS  == horasDadas) {
+        cout << pAnimalTemp->getNombre() << " se va a dormir ahora." << endl;
+    }
+
+
+
+}
+
 void mostrarMenu(Sistema* sistema){
     int opcion;
     int idTemp = 1;
@@ -114,7 +211,10 @@ void mostrarMenu(Sistema* sistema){
         cout << "2. Agregar un animal al zoologico." << endl;
         cout << "3. Mostrar habitats y animales disponibles" << endl;
         cout << "4. Ingresar un alimento al inventario." << endl;
-        cout << "5. Mostrar alimentos en el inventario" << endl;
+        cout << "5. Mostrar alimentos en el inventario." << endl;
+        cout << "6. Alimentar a un animal." << endl;
+        cout << "7. Jugar con un animal." << endl;
+        cout << "8. Enviar a dormir a un animal" << endl;
         cin >> opcion;
         switch(opcion){
             case 1:
@@ -134,6 +234,15 @@ void mostrarMenu(Sistema* sistema){
                 break;
             case 5:
                 sistema->mostrarInfoAlimentos();
+                break;
+            case 6:
+                sextaOpcion(sistema);
+                break;
+            case 7:
+                septimaOpcion(sistema);
+                break;
+            case 8:
+                octavaOpcion(sistema);
                 break;
         }
     }while (opcion != 0);

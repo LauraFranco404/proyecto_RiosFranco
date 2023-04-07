@@ -26,7 +26,8 @@ public:
 
     void recibirAlimentos(int id, Alimento* pAlimentoTemp);
     void mostrarInfoAlimentos();
-    Alimento* accederAAlimento();
+    Alimento* accederAAlimento(string alimento);
+    void liberarAlimento(string alimento);
 };
 
 

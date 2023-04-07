@@ -20,9 +20,10 @@ private:
      int tiempoJuego;
      bool estadoSalud;
      string habitat;
+     bool haJugado;
 
 public:
-    Animal(string nombre, int edad, string especie, string tipoA, int horasS, int tiempoJuego, bool estadoSalud, string habitat);
+    Animal(string nombre, int edad, string especie, string tipoA, int horasS, int tiempoJuego, bool estadoSalud, string habitat, bool haJugado);
     string getHabitat();
     string getNombre();
     int getEdad();
@@ -31,6 +32,9 @@ public:
     int getHorasSuenio();
     int getTiempoJuego();
     string getEstadoSalud();
+    string verSiHaJugado();
+    bool getHaJugado();
+    void setHaJugado(bool haJugado);
 };
 
 

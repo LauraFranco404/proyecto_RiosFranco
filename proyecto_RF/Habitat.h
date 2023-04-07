@@ -24,6 +24,7 @@ public:
     string getTipoH();
     void recibirAnimal(int id, Animal* pAnimalTemp, string habitat);
     void mostrarMapaAnimales();
+    Animal* accederAAnimal(string nombre);
 };
 
 

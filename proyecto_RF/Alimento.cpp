@@ -21,4 +21,8 @@ string Alimento::getCategoriaAlimento() {
     else{
         return "Alimento apto para omnivoros";
     }
-};
+}
+
+int Alimento::getNumCategoriaAlimento() {
+    return this->categoria;
+}
