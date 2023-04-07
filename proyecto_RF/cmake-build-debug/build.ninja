@@ -73,6 +73,12 @@ build CMakeFiles/proyecto_RF.dir/Sistema.cpp.obj: CXX_COMPILER__proyecto_RF_Debu
   OBJECT_DIR = CMakeFiles\proyecto_RF.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto_RF.dir
 
+build CMakeFiles/proyecto_RF.dir/Alimento.cpp.obj: CXX_COMPILER__proyecto_RF_Debug C$:/Users/laura/OneDrive/Escritorio/GIT/proyecto_RiosFranco/proyecto_RF/Alimento.cpp || cmake_object_order_depends_target_proyecto_RF
+  DEP_FILE = CMakeFiles\proyecto_RF.dir\Alimento.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\proyecto_RF.dir
+  OBJECT_FILE_DIR = CMakeFiles\proyecto_RF.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target proyecto_RF
@@ -81,7 +87,7 @@ build CMakeFiles/proyecto_RF.dir/Sistema.cpp.obj: CXX_COMPILER__proyecto_RF_Debu
 #############################################
 # Link the executable proyecto_RF.exe
 
-build proyecto_RF.exe: CXX_EXECUTABLE_LINKER__proyecto_RF_Debug CMakeFiles/proyecto_RF.dir/main.cpp.obj CMakeFiles/proyecto_RF.dir/Habitat.cpp.obj CMakeFiles/proyecto_RF.dir/Animal.cpp.obj CMakeFiles/proyecto_RF.dir/Sistema.cpp.obj
+build proyecto_RF.exe: CXX_EXECUTABLE_LINKER__proyecto_RF_Debug CMakeFiles/proyecto_RF.dir/main.cpp.obj CMakeFiles/proyecto_RF.dir/Habitat.cpp.obj CMakeFiles/proyecto_RF.dir/Animal.cpp.obj CMakeFiles/proyecto_RF.dir/Sistema.cpp.obj CMakeFiles/proyecto_RF.dir/Alimento.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\proyecto_RF.dir

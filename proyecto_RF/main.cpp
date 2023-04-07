@@ -71,27 +71,50 @@ void segundaOpcion(Sistema* sistema, int idTempA){
         cout << "Ingrese el habitat al que pertenece:";
         cin >> habitatTemp;
     }
+    while(sistema->estaHabitat(habitatTemp) == false){
+        cout << "Lo lamento, este habitat no esta creado." << endl;
+        cout << "Por favor ingrese un habitat existente." << endl;
+        cin >> habitatTemp;
+    }
     if(sistema->estaHabitat(habitatTemp) == true){
         Animal *pAnimalTemp = new Animal(nombreTemp, edadTemp, especieTemp, tipoATemp, horasSTemp, tiempoJuegoTemp, estadoSaludTemp, habitatTemp);
         Habitat *pHabitatTemp = sistema->accederAHabitat(habitatTemp);
         pHabitatTemp->recibirAnimal(idTempA, pAnimalTemp, habitatTemp);
     }
-    else{
-        cout << "Lo lamento, este habitat no esta creado" << endl;
-    }
-
 }
 
+void cuartaOpcion(Sistema* sistema, int idTempAl){
+    string nombreA;
+    int categoriaA;
+
+    cout << "Bienvenido, usuario." << endl;
+    cout << "A continuacion recibiremos la informacion del alimento que desea agregar al sistema." << endl;
+    cout << "Ingrese el nombre del alimento que desea agregar:";
+    cin >> nombreA;
+    cout << "Ahora ingrese la categoria en la que se encuentra el alimento (0 apto para carnivoros, 1 apto para herviboros y 2 apto para omnivoros):";
+    cin >> categoriaA;
+    while(categoriaA != 0 && categoriaA != 1 && categoriaA != 2){
+        cout << "Por favor verifique que la categoria que esta ingresando corresponde a las categorias existentes en el zoologico (0 apto para carnivoros, 1 apto para herviboros y 2 apto para omnivoros)" << endl;
+        cout << "Ingrese la categoria en la que se encuentra el alimento:";
+        cin >> categoriaA;
+    }
+    Alimento *pAlimentoTemp = new Alimento(nombreA, categoriaA);
+    sistema->recibirAlimentos(idTempAl, pAlimentoTemp);
+    cout << "El alimento se ha agregado exitosamente" << endl;
+}
 
 void mostrarMenu(Sistema* sistema){
     int opcion;
     int idTemp = 1;
     int idTempA = 1;
+    int idTempAl = 1;
     do{
         cout << "\n****Bienvenido al zoologico RF****\n";
         cout << "1. Agregar un habitat." << endl;
         cout << "2. Agregar un animal al zoologico." << endl;
         cout << "3. Mostrar habitats y animales disponibles" << endl;
+        cout << "4. Ingresar un alimento al inventario." << endl;
+        cout << "5. Mostrar alimentos en el inventario" << endl;
         cin >> opcion;
         switch(opcion){
             case 1:
@@ -104,6 +127,13 @@ void mostrarMenu(Sistema* sistema){
                 break;
             case 3:
                 sistema->mostrarInfoHabitats();
+                break;
+            case 4:
+                cuartaOpcion(sistema, idTempAl);
+                idTempAl++;
+                break;
+            case 5:
+                sistema->mostrarInfoAlimentos();
                 break;
         }
     }while (opcion != 0);

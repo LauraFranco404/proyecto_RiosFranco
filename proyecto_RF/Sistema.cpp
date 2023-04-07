@@ -15,6 +15,10 @@ void Sistema::recibirHabitat(int id, Habitat* pHabitatTemp) {
     this->mapaHabitats.insert(std::make_pair(id, pHabitatTemp));
 }
 
+void Sistema::recibirAlimentos(int id, Alimento *pAlimentoTemp) {
+    this->mapaAlimentos.insert(std::make_pair(id, pAlimentoTemp));
+}
+
 bool Sistema::estaHabitat(string tipoHabitat) {
     unordered_map<int, Habitat*>::iterator itMap;
     for (itMap = this->mapaHabitats.begin(); itMap != this->mapaHabitats.end(); ++itMap){
@@ -38,6 +42,7 @@ Habitat* Sistema::accederAHabitat(string tipoHabitat) {
 }
 
 
+
 void Sistema::mostrarInfoHabitats() {
     unordered_map<int, Habitat*>::iterator itMap;
     for (itMap = this->mapaHabitats.begin(); itMap != this->mapaHabitats.end(); ++itMap) {
@@ -47,6 +52,15 @@ void Sistema::mostrarInfoHabitats() {
     }
 }
 
+void Sistema::mostrarInfoAlimentos(){
+    unordered_map<int, Alimento*>::iterator itMap;
+    for (itMap = this->mapaAlimentos.begin(); itMap != this->mapaAlimentos.end(); ++itMap) {
+        Alimento *pAlimentoTemp = itMap->second;
+        cout << "\n ***Alimento*** " << endl;
+        cout << "Nombre: " << pAlimentoTemp->getNombreAlimento() << endl;
+        cout << "Categoria: " << pAlimentoTemp->getCategoriaAlimento() << endl;
+    }
+}
 
 Sistema::~Sistema() {
     cout << "\n Gracias por preferirnos!" << endl;

@@ -9,10 +9,12 @@
 #include <iterator>
 #include <unordered_map>
 #include "Habitat.h"
+#include "Alimento.h"
 
 class Sistema {
 private:
     unordered_map<int, Habitat*> mapaHabitats;
+    unordered_map<int, Alimento*> mapaAlimentos;
 public:
     Sistema() = default;
     ~Sistema();
@@ -21,6 +23,10 @@ public:
     bool estaHabitat(string tipoHabitat);
     Habitat* accederAHabitat(string tipoHabitat);
     void mostrarInfoHabitats();
+
+    void recibirAlimentos(int id, Alimento* pAlimentoTemp);
+    void mostrarInfoAlimentos();
+    Alimento* accederAAlimento();
 };
 
 

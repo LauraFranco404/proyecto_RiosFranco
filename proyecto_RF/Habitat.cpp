@@ -29,8 +29,8 @@ void Habitat::mostrarMapaAnimales() {
         cout << "Nombre: " << pAnimalTemp->getNombre() << endl;
         cout << "Edad: " << pAnimalTemp->getEdad() << endl;
         cout << "Especie: " << pAnimalTemp->getEspecie() << endl;
-        cout << "Tipo de alimentación: " << pAnimalTemp->getTipoAlimentacion() << endl;
-        cout << "Horas de sueño: " << pAnimalTemp->getHorasSuenio() << endl;
+        cout << "Tipo de alimentacion: " << pAnimalTemp->getTipoAlimentacion() << endl;
+        cout << "Horas de suenio: " << pAnimalTemp->getHorasSuenio() << endl;
         cout << "Horas de juego: " << pAnimalTemp->getTiempoJuego() << endl;
         cout << "Estado de salud: " << pAnimalTemp->getEstadoSalud() << endl;
 
