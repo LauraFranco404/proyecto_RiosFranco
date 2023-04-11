@@ -7,6 +7,10 @@ using std::endl;
 
 #include "Sistema.h"
 
+/*
+ * La función primeraOpcion se encarga de utilizar la función definida para recibir un habitat e ingresarlo al sistema del zoológico
+ * Recibe como parámetro un apuntador que dirige al sistema y un índice para construir el mapa de hábitats
+*/
 void primeraOpcion(Sistema* sistema, int idTemp){
     string tipoHabitatTemp;
 
@@ -27,6 +31,11 @@ void primeraOpcion(Sistema* sistema, int idTemp){
     }
 }
 
+
+/*
+ * La función segundaOpcion se encarga de utilizar la función definida para ingresar un animal a un habitat en específico.
+ * Recibe como parámetro un apuntador que dirige al sistema y un índice para construir el mapa de animales que a su vez estará dentro de un objeto perteneciente al hábitat.
+*/
 void segundaOpcion(Sistema* sistema, int idTempA){
 
     string nombreTemp;
@@ -83,6 +92,12 @@ void segundaOpcion(Sistema* sistema, int idTempA){
     }
 }
 
+
+/*
+ * La función cuartaOpcion se encarga de utilizar la función definida para recibir un alimento e ingresarlo al sistema del zoológico
+ * Recibe como parámetro un apuntador que dirige al sistema y un índice para construir el mapa de alimentos
+ *
+*/
 void cuartaOpcion(Sistema* sistema, int idTempAl){
     string nombreA;
     int categoriaA;
@@ -103,6 +118,13 @@ void cuartaOpcion(Sistema* sistema, int idTempAl){
     cout << "El alimento se ha agregado exitosamente" << endl;
 }
 
+
+/*
+ * La función sextaOpcion se encarga de utilizar la función definida para alimentar un animal.
+    De esta manera la función accede a los alimentos disponibles en el "inventario" del zoológico y toma uno para dárselo
+    a un animal que pueda consumirlo según su dieta
+ * Recibe como parámetro un apuntador que dirige al sistema, pues este contiene los animales y alimentos disponibles
+ */
 void sextaOpcion(Sistema* sistema) {
     string nombreH;
     string nombreA;
@@ -144,6 +166,11 @@ void sextaOpcion(Sistema* sistema) {
     }
 }
 
+
+/*
+ * Esta funcion accede a un animal y cambia el booleano que determina si el animal ha jugado o no.
+ * Así, según el momento del día, se cambiará el estado del animal a un animal que ya jugó
+ */
 void septimaOpcion(Sistema* sistema){
     string nombreH;
     string nombreA;
@@ -162,6 +189,12 @@ void septimaOpcion(Sistema* sistema){
 }
 
 
+/*
+ * La función octavaOpcion se encarga de llevar a dormir a un animal teniendo en cuenta algunos puntos.
+ * Esta función accede a la información del animal para verificar cuántas horas se le asignan de sueño. En caso de que estas
+ * sobrepasen o no sean suficientes, no permitirá llevar al animal a dormir
+ * Recibe como parámetro un apuntador que dirige al sistema y un índice para construir el mapa de alimentos
+ */
 void octavaOpcion(Sistema* sistema){
     string nombreH;
     string nombreA;
@@ -200,6 +233,11 @@ void octavaOpcion(Sistema* sistema){
 
 }
 
+
+/*
+ * La función mostrarMenu se encarga de manejar aquello que se trabajará en el sistema que se creó.
+ * Contiene las funcionalidades del proyecto y muestra al usuario aquello que puede hacer.
+ */
 void mostrarMenu(Sistema* sistema){
     int opcion;
     int idTemp = 1;
@@ -215,6 +253,7 @@ void mostrarMenu(Sistema* sistema){
         cout << "6. Alimentar a un animal." << endl;
         cout << "7. Jugar con un animal." << endl;
         cout << "8. Enviar a dormir a un animal" << endl;
+        cout << "0. Salir." << endl;
         cin >> opcion;
         switch(opcion){
             case 1:
@@ -246,6 +285,7 @@ void mostrarMenu(Sistema* sistema){
                 break;
         }
     }while (opcion != 0);
+    cout << "****Zoologico cerrado****" << endl;
 }
 
 
@@ -253,6 +293,7 @@ void mostrarMenu(Sistema* sistema){
 int main() {
     Sistema* pSistema = new Sistema();
     mostrarMenu(pSistema);
+    delete pSistema;
     return 0;
 }
 
